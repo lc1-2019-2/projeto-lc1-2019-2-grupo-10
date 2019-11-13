@@ -1,0 +1,8 @@
+app_prefix_suffix :LEMMA
+  FORALL (l:list[T], n :below[length(l)+1]) : l = append(prefix(l,n), suffix(l,n))
+
+
+occurrences_of_app : LEMMA
+        FORALL (l1,l2:list[T], x : T) : 
+            occurrences(l1)(x) + occurrences(l2)(x) =
+                occurrences(append(l1, l2))(x) 
